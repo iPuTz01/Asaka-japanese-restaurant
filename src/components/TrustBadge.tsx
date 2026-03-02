@@ -1,4 +1,4 @@
-import { Star, Users, Heart } from "lucide-react";
+import { Star, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const TrustBadge = () => (
@@ -24,10 +24,6 @@ const TrustBadge = () => (
         <div className="flex items-center gap-2 text-muted-foreground">
           <Users className="w-5 h-5" />
           <span className="font-medium">700+ Reviews</span>
-        </div>
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Heart className="w-5 h-5 text-primary" />
-          <span className="font-medium">LGBTQ+ Friendly</span>
         </div>
         <div className="text-sm text-muted-foreground font-medium">
           $20–30 per person · Dine-In & Takeout

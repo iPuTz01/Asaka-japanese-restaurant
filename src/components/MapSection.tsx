@@ -52,7 +52,7 @@ const MapSection = () => (
             <Clock className="w-6 h-6 text-primary mt-1 shrink-0" />
             <div>
               <h3 className="font-display font-semibold text-lg mb-1">Hours</h3>
-              <p className="text-muted-foreground">Open Daily · Closes at 9:30 PM</p>
+              <p className="text-muted-foreground">Mon–Wed Closed<br />Thu–Sat 5–9:30 PM<br />Sun 5–9 PM</p>
             </div>
           </div>
           <div className="flex items-start gap-4">

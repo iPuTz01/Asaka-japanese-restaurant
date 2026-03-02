@@ -33,13 +33,13 @@ const SiteFooter = () => (
               <span>6414 E 82nd St, Indianapolis, IN 46250<br />Castle Run Shopping Center</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" /> Open Daily · Closes 9:30 PM
+              <Clock className="w-4 h-4" /> Thu–Sat 5–9:30 PM · Sun 5–9 PM
             </div>
           </div>
         </div>
       </div>
       <div className="border-t border-muted/20 pt-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Asaka Japanese Restaurant. All rights reserved. LGBTQ+ Friendly.
+        © {new Date().getFullYear()} Asaka Japanese Restaurant. All rights reserved.
       </div>
     </div>
   </footer>
