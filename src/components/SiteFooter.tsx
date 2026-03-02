@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook } from "lucide-react";
 
 const PHONE = "(317) 576-0556";
 const PHONE_HREF = "tel:+13175760556";
@@ -35,6 +35,9 @@ const SiteFooter = () => (
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" /> Thu–Sat 5–9:30 PM · Sun 5–9 PM
             </div>
+            <a href="https://www.facebook.com/indyAsaka/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Facebook className="w-4 h-4" /> Follow us on Facebook
+            </a>
           </div>
         </div>
       </div>
