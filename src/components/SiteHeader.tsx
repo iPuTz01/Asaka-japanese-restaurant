@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -41,6 +41,9 @@ const SiteHeader = () => {
         </nav>
 
         <div className="flex items-center gap-3">
+          <a href="https://www.facebook.com/indyAsaka/" target="_blank" rel="noopener noreferrer" aria-label="Asaka on Facebook" className="text-secondary-foreground/80 hover:text-primary-foreground transition-colors">
+            <Facebook className="w-5 h-5" />
+          </a>
           <Button asChild variant="hero" size="sm" className="hidden sm:inline-flex">
             <a href={PHONE_HREF}>
               <Phone className="w-4 h-4" />
