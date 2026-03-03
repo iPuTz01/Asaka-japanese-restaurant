@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Flame } from "lucide-react";
+import heroPlatter from "@/assets/hero-platter-5.jpg";
 
 const highlights = [
   { name: "Sushi Happy Hour", desc: "Daily specials on select rolls", badge: "Special" },
@@ -14,9 +15,30 @@ const highlights = [
   { name: "Asaka Special Sushi", desc: "Our signature platter" },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    },
+  }),
+};
+
 const HighlightsSection = () => (
-  <section className="py-20 bg-section-warm">
-    <div className="container">
+  <section className="py-20 relative overflow-hidden">
+    {/* Subtle background image */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroPlatter})` }}
+    />
+    <div className="absolute inset-0 bg-section-warm/[0.93]" />
+
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,11 +52,13 @@ const HighlightsSection = () => (
         {highlights.map((item, i) => (
           <motion.div
             key={item.name}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="group bg-card rounded-lg p-5 hover:shadow-lg transition-all duration-300 border border-border hover:border-primary/30 relative"
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={cardVariants}
+            whileHover={{ y: -6, scale: 1.03 }}
+            className="group bg-card/90 backdrop-blur-sm rounded-lg p-5 shadow-sm hover:shadow-xl transition-shadow duration-300 border border-border hover:border-primary/30 relative cursor-default"
           >
             {item.badge && (
               <span className="absolute top-3 right-3 flex items-center gap-1 bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full">
