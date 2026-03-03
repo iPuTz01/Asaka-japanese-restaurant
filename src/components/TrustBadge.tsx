@@ -26,7 +26,7 @@ const TrustBadge = () => (
           <span className="font-medium">700+ Reviews</span>
         </div>
         <div className="text-sm text-muted-foreground font-medium">
-          $20–30 per person · Dine-In & Takeout
+          Dine-In & Takeout
         </div>
       </motion.div>
     </div>
