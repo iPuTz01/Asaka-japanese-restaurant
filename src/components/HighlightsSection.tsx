@@ -36,7 +36,7 @@ const HighlightsSection = () => (
       className="absolute inset-0 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroPlatter})` }}
     />
-    <div className="absolute inset-0 bg-section-warm/[0.93]" />
+    <div className="absolute inset-0 bg-section-warm/[0.96]" />
 
     <div className="container relative z-10">
       <motion.div
