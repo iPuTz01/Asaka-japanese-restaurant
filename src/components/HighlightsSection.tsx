@@ -43,10 +43,10 @@ const HighlightsSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center mb-12 bg-section-warm/80 backdrop-blur-sm rounded-xl py-6 px-4 inline-block mx-auto w-full max-w-md"
       >
-        <p className="text-primary text-sm uppercase tracking-[0.2em] font-medium mb-2">Our Favorites</p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold">Menu Highlights</h2>
+        <p className="text-primary text-sm uppercase tracking-[0.2em] font-medium mb-2 drop-shadow-sm">Our Favorites</p>
+        <h2 className="font-display text-3xl md:text-4xl font-bold drop-shadow-sm">Menu Highlights</h2>
       </motion.div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {highlights.map((item, i) => (
