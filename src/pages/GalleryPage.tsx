@@ -1,6 +1,8 @@
+import { useState, useCallback } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -29,8 +31,6 @@ import gallery24 from "@/assets/gallery-24.jpg";
 import gallery25 from "@/assets/gallery-25.jpg";
 import gallery26 from "@/assets/gallery-26.jpg";
 import gallery27 from "@/assets/gallery-27.jpg";
-import gallery28 from "@/assets/gallery-28.jpg";
-import gallery29 from "@/assets/gallery-29.jpg";
 import gallery30 from "@/assets/gallery-30.jpg";
 
 const images = [
@@ -61,51 +61,115 @@ const images = [
   { src: gallery25, alt: "Sushi boat with salad and miso soup" },
   { src: gallery26, alt: "Sushi and maki platter with lucky cat" },
   { src: gallery27, alt: "Sashimi and uni platter duo" },
-  { src: gallery28, alt: "Tuna and salmon sashimi bowl" },
-  { src: gallery29, alt: "Heart-shaped sushi bento" },
   { src: gallery30, alt: "Heart-shaped sushi box with hand rolls" },
 ];
 
-const GalleryPage = () => (
-  <>
-    <SiteHeader />
-    <main>
-      <section className="bg-section-dark py-16 text-center">
-        <div className="container">
-          <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium mb-2">Our Story in Pictures</p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-3">Gallery</h1>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            A glimpse into the food, team, and atmosphere at Asaka.
-          </p>
-        </div>
-      </section>
+const GalleryPage = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-      <section className="py-16 bg-background">
-        <div className="container">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-            {images.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.05, duration: 0.5 }}
-                className="break-inside-avoid overflow-hidden rounded-lg group"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
+  const close = useCallback(() => setSelectedIndex(null), []);
+  const prev = useCallback(
+    () => setSelectedIndex((i) => (i !== null ? (i - 1 + images.length) % images.length : null)),
+    []
+  );
+  const next = useCallback(
+    () => setSelectedIndex((i) => (i !== null ? (i + 1) % images.length : null)),
+    []
+  );
+
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <section className="bg-section-dark py-16 text-center">
+          <div className="container">
+            <p className="text-accent text-sm uppercase tracking-[0.2em] font-medium mb-2">Our Story in Pictures</p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold mb-3">Gallery</h1>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              A glimpse into the food, team, and atmosphere at Asaka.
+            </p>
           </div>
-        </div>
-      </section>
-    </main>
-    <SiteFooter />
-  </>
-);
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="container">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+              {images.map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ delay: i * 0.05, duration: 0.5 }}
+                  className="break-inside-avoid overflow-hidden rounded-lg group cursor-pointer"
+                  onClick={() => setSelectedIndex(i)}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={close}
+          >
+            {/* Close button */}
+            <button
+              onClick={close}
+              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Prev */}
+            <button
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+              className="absolute left-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            >
+              <ChevronLeft className="w-7 h-7" />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={selectedIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.25 }}
+              src={images[selectedIndex].src}
+              alt={images[selectedIndex].alt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+            />
+
+            {/* Next */}
+            <button
+              onClick={(e) => { e.stopPropagation(); next(); }}
+              className="absolute right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+            >
+              <ChevronRight className="w-7 h-7" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 export default GalleryPage;
