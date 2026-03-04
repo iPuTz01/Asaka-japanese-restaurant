@@ -32,6 +32,16 @@ import gallery25 from "@/assets/gallery-25.jpg";
 import gallery26 from "@/assets/gallery-26.jpg";
 import gallery27 from "@/assets/gallery-27.jpg";
 import gallery30 from "@/assets/gallery-30.jpg";
+import gallery31 from "@/assets/gallery-31.jpg";
+import gallery32 from "@/assets/gallery-32.jpg";
+import gallery33 from "@/assets/gallery-33.jpg";
+import gallery34 from "@/assets/gallery-34.jpg";
+import gallery35 from "@/assets/gallery-35.jpg";
+import gallery36 from "@/assets/gallery-36.jpg";
+import gallery37 from "@/assets/gallery-37.jpg";
+import gallery38 from "@/assets/gallery-38.jpg";
+import gallery39 from "@/assets/gallery-39.jpg";
+import gallery40 from "@/assets/gallery-40.jpg";
 
 const images = [
   { src: gallery1, alt: "Our team member in the kitchen" },
@@ -62,6 +72,16 @@ const images = [
   { src: gallery26, alt: "Sushi and maki platter with lucky cat" },
   { src: gallery27, alt: "Sashimi and uni platter duo" },
   { src: gallery30, alt: "Heart-shaped sushi box with hand rolls" },
+  { src: gallery31, alt: "Beef udon noodle soup" },
+  { src: gallery32, alt: "Shrimp tempura udon bowl" },
+  { src: gallery33, alt: "Katsudon rice bowl" },
+  { src: gallery34, alt: "Heart-shaped sushi platter with hand rolls" },
+  { src: gallery35, alt: "Japanese lychee sparkling cocktails" },
+  { src: gallery36, alt: "Katsu curry rice" },
+  { src: gallery37, alt: "Tonkatsu plate with rice and soba" },
+  { src: gallery38, alt: "Sushi and sashimi platter with uni and ikura" },
+  { src: gallery39, alt: "Shoyu ramen with chashu" },
+  { src: gallery40, alt: "Tempura shrimp noodle soup" },
 ];
 
 const GalleryPage = () => {
