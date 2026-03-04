@@ -12,6 +12,16 @@ import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 import gallery9 from "@/assets/gallery-9.jpg";
 import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery-14.jpg";
+import gallery15 from "@/assets/gallery-15.jpg";
+import gallery16 from "@/assets/gallery-16.jpg";
+import gallery17 from "@/assets/gallery-17.jpg";
+import gallery18 from "@/assets/gallery-18.jpg";
+import gallery19 from "@/assets/gallery-19.jpg";
+import gallery20 from "@/assets/gallery-20.jpg";
 
 const images = [
   { src: gallery1, alt: "Our team member in the kitchen" },
@@ -24,6 +34,16 @@ const images = [
   { src: gallery8, alt: "Glazed unagi over rice" },
   { src: gallery9, alt: "Fresh sashimi on wooden board" },
   { src: gallery10, alt: "Uni and ikura sushi board" },
+  { src: gallery11, alt: "Sushi roll platter with tempura" },
+  { src: gallery12, alt: "Grilled fish with potato salad and noodles" },
+  { src: gallery13, alt: "Tempura sushi rolls close-up" },
+  { src: gallery14, alt: "Shrimp tempura sushi platter" },
+  { src: gallery15, alt: "Sashimi and nigiri assortment" },
+  { src: gallery16, alt: "Bento box with tempura and teriyaki" },
+  { src: gallery17, alt: "Hand roll in front of Asaka sign" },
+  { src: gallery18, alt: "Premium sushi roll platter" },
+  { src: gallery19, alt: "Tuna and salmon sashimi bowl" },
+  { src: gallery20, alt: "Heart-shaped sushi box" },
 ];
 
 const GalleryPage = () => (
