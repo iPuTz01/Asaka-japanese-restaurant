@@ -22,6 +22,16 @@ import gallery17 from "@/assets/gallery-17.jpg";
 import gallery18 from "@/assets/gallery-18.jpg";
 import gallery19 from "@/assets/gallery-19.jpg";
 import gallery20 from "@/assets/gallery-20.jpg";
+import gallery21 from "@/assets/gallery-21.jpg";
+import gallery22 from "@/assets/gallery-22.jpg";
+import gallery23 from "@/assets/gallery-23.jpg";
+import gallery24 from "@/assets/gallery-24.jpg";
+import gallery25 from "@/assets/gallery-25.jpg";
+import gallery26 from "@/assets/gallery-26.jpg";
+import gallery27 from "@/assets/gallery-27.jpg";
+import gallery28 from "@/assets/gallery-28.jpg";
+import gallery29 from "@/assets/gallery-29.jpg";
+import gallery30 from "@/assets/gallery-30.jpg";
 
 const images = [
   { src: gallery1, alt: "Our team member in the kitchen" },
@@ -44,6 +54,16 @@ const images = [
   { src: gallery18, alt: "Premium sushi roll platter" },
   { src: gallery19, alt: "Tuna and salmon sashimi bowl" },
   { src: gallery20, alt: "Heart-shaped sushi box" },
+  { src: gallery21, alt: "Sushi and sashimi platter with rice balls" },
+  { src: gallery22, alt: "Nigiri sushi platter with shrimp and ikura" },
+  { src: gallery23, alt: "Premium sashimi platter with prawns" },
+  { src: gallery24, alt: "Sushi boat with sunflowers" },
+  { src: gallery25, alt: "Sushi boat with salad and miso soup" },
+  { src: gallery26, alt: "Sushi and maki platter with lucky cat" },
+  { src: gallery27, alt: "Sashimi and uni platter duo" },
+  { src: gallery28, alt: "Tuna and salmon sashimi bowl" },
+  { src: gallery29, alt: "Heart-shaped sushi bento" },
+  { src: gallery30, alt: "Heart-shaped sushi box with hand rolls" },
 ];
 
 const GalleryPage = () => (
